@@ -14,6 +14,8 @@
 }
 *{
     box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
 }
 html{
     line-height: 115%;
@@ -23,7 +25,6 @@ title{
     font-family: 'Cormorant Garamond' serif;
 }
 body{
-    margin: 0;
     font-family: 'Montserrat', sans-serif;
     color: var(--primaryText);
 }
@@ -71,6 +72,12 @@ button{
 .current-page{
     color: var(--secondaryText);
 }
+.block-20{
+    width: 20vw;
+}
+.block-60{
+    width: 60vw;
+}
 .gradient-text{/*Intended for use on logo but ultimately left unused, it's here as a reference on how to put linear gradients on text*/
    background-color: var(--primaryText);
    background-image: linear-gradient(45deg, var(--pastelRed), var(--primaryText));
@@ -89,6 +96,7 @@ button{
 .top-block{
     width: 100%;
     min-width: 250px;
+    padding: 2em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -99,6 +107,9 @@ button{
         flex-direction: column;
         align-items: center;
     }
+}
+.logo{
+    margin-right: 10%;
 }
 .top-block h1{
     font-size: 24px;
@@ -119,8 +130,8 @@ button{
     margin-right: 1rem;
 }
 .search {
+    width: fit-content;
     border-bottom: 1px solid var(--secondaryText);
-    margin: 0 3rem;
 }
 
 
@@ -133,24 +144,23 @@ button{
 }/*TOP NAV, LOGO AND SEARCH */
 
 /* MAIN SECTION, A GALLERY GRID*/
-.main-container{
+main{
     width: 100vw;
-    height: calc(100vh - 60px);
     margin-top: 60px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 960px;
     transition: 300ms;
 }
-.main-container:has(.left:hover){
+main:has(.left:hover){
     grid-template-columns: 1.1fr 0.9fr;
 }
-.main-container:has(.right:hover){
+main:has(.right:hover){
     grid-template-columns: 0.9fr 1fr;
 }
 .text-item{
     place-self: center;
-    animation: opacious 700ms ease-in;
+    animation: opacious 700ms ease;
 }
 .text-item h2, .text-item > a{
     color: white;
@@ -176,10 +186,10 @@ button{
     display:grid;
 }
 .left{
-    animation:flying-left 700ms; 
+    animation:flying-left 700ms ease; 
 }
 .right{
-    animation: flying-right 700ms;
+    animation: flying-right 700ms ease;
 }
 @keyframes opacious { 
     0% {
@@ -227,8 +237,12 @@ button{
 .footer-container form{
     display: flex;
     flex-direction: column;
-    height: calc(inherit - 4em);
+    justify-content: center;
+    align-items: center;
 }
 .footer-container form > input[type="email"]{
+    border-bottom: 1px solid var(--primaryText);
+}
+.footer-container form > input[type="text"]{
     border-bottom: 1px solid var(--primaryText);
 }
