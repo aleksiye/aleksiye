@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Gloock&family=Montserrat&display=swap');
+:root{/*This is where I define my color pallette*/
+    
+    --primaryColor:     #ffffff;
+    --primaryText:      #000000;
+    --secondaryText:    #757575;
+    --thinBorder:  	    #D3D3D3;
+    --primaryAccent:    #BE8ABF;
+
+    /* Secondary accents */
+    --pastelRed:        #FEA5AD;
+    --pastelPeach:      #F8C3AF;
+    --pastelPink:       #EA9ABB;
+}
+*{
+    box-sizing: border-box;
+}
+html{
+    line-height: 115%;
+    scroll-behavior: smooth;
+}
+title{
+    font-family: 'Cormorant Garamond' serif;
+}
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primaryText);
+}
+div{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: var(--primaryText);
+}
+a:hover{
+    font-weight: 600;
+}
+input[type="text"], input[type="email"] {
+    border: none;
+}
+input[type="text"]:focus, input[type="email"]:focus{
+    outline: none;
+}
+button{
+    background: none;
+    color: var(--primaryText);
+    border: none;
+    font: inherit;
+}
+
+/* GLOBAL CLASSES SECTION */
+/* - intended to contain frequently used classes */
+
+.cleaner{   /*WARNING: DANGEROUS CLASSES*/
+            /*Essential if one plans to use float: left; or float: right; css properties*/
+            /*Intended never to be used but better to be available just in case*/
+    clear: both;
+}
+.float-left{
+    float:left;
+}
+.float-right{
+    float:right;
+}           /*END OF WARNING*/
+
+:hover.border-bottom{
+    border-bottom: 1px solid var(--thinBorder);
+}
+.current-page{
+    color: var(--secondaryText);
+}
+.gradient-text{/*Intended for use on logo but ultimately left unused, it's here as a reference on how to put linear gradients on text*/
+   background-color: var(--primaryText);
+   background-image: linear-gradient(45deg, var(--pastelRed), var(--primaryText));
+   background-size: 100%;
+   background-repeat: no-repeat;
+
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent; 
+   -moz-background-clip: text;
+   -moz-text-fill-color: transparent;
+}
+/* GLOBAL CLASSES SECTION */
+
+/*TOP NAV, LOGO AND SEARCH */
+.top-block{
+    width: 100%;
+    min-width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+@media (max-width: 800px) {
+    .top-block{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.top-block h1{
+    font-size: 24px;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.1rem;
+    text-align: center;
+}
+.small-nav{
+    animation: flying-nav 700ms;
+}
+.small-nav ul{
+    display: flex;
+    flex-flow: row wrap;
+    
+}
+.small-nav ul li{
+    list-style: none;
+    margin-right: 1rem;
+}
+.search {
+    border-bottom: 1px solid var(--secondaryText);
+    margin: 0 3rem;
+}
+
+
+.search input[type="text"]::placeholder{
+    color: #fff;
+}
+.search input[type="text"]:focus::placeholder{
+    color: var(--secondaryText);
+    
+}/*TOP NAV, LOGO AND SEARCH */
+
+/* MAIN SECTION, A GALLERY GRID*/
+.main-container{
+    width: 100vw;
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 960px;
+    transition: 300ms;
+}
+.main-container:has(.left:hover){
+    grid-template-columns: 1.1fr 0.9fr;
+}
+.main-container:has(.right:hover){
+    grid-template-columns: 0.9fr 1fr;
+}
+.text-item{
+    place-self: center;
+    animation: opacious 700ms ease-in;
+}
+.text-item h2, .text-item > a{
+    color: white;
+}
+.img-item{
+    place-self: stretch;
+    z-index: -1;
+    transition: width 0.3s ease-in-out;
+}
+.left.img-item{
+    grid-column: 1/2;
+    background-image: url("../img/ilya-mirnyy.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.right.img-item{
+    grid-column: 2 /3;
+    background-image: url("../img/olena-sergienko.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.left,.right{
+    display:grid;
+}
+.left{
+    animation:flying-left 700ms; 
+}
+.right{
+    animation: flying-right 700ms;
+}
+@keyframes opacious { 
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+@keyframes flying-nav{
+    0% {
+        opacity: 0;
+        transform: translate(-400px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+@keyframes flying-left{
+    0%{
+        transform: translate(-540px);
+    }
+    100%{
+        transform: translate(0px);
+    }
+}
+@keyframes flying-right{
+    0%{
+        transform: translate(540px);
+    }
+    100%{
+        transform: translate(0px);
+    }
+}
+
+/*FOOTER SECTION */
+.footer-container{
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    min-height: 360px;
+}
+.footer-container form{
+    display: flex;
+    flex-direction: column;
+    height: calc(inherit - 4em);
+}
+.footer-container form > input[type="email"]{
+    border-bottom: 1px solid var(--primaryText);
+}

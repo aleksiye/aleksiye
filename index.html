@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <title>GAR DE'ROBA</title>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./assets/img/color-logo.png" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"> 
+  </head>
+  <body>
+    <header id="header">
+      <div class="border-bottom top-block">
+          <div class="small-nav">
+            <ul>
+              <li id="Fashion"><a href="#header">Fashion & Accessories</a></li>
+              <li><a href="">Fragrance & Beauty</a></li>
+            </ul>
+          </div>
+          <a href="index.html">
+          <h1>GAR DE'ROBA</h1>
+          </a>
+          <div class="search">
+            <form action="./search.php" method="GET">
+              <input type="text" id="search" name="search" placeholder="What are you looking for?">
+              <button type="submit" name="search" id="search" class="button"><i class="zmdi zmdi-search"></i></button>
+            </form>
+          </div>
+      </div>
+      <div id="navbar">
+      
+      </div>
+    </header>
+    <main>
+      <div class="main-container">
+        
+        <div class="left img-item">
+          <div class="text-item">
+            <a href="fashion.html">
+            <h2>Fashion &amp Accessories</h2> 
+            <p>Shop now</p>
+            </a>
+        </div>
+        </div>
+        <div class="right img-item">
+          <div class="text-item">
+            <a href="fashion.html">
+            <h2>Fragrance &amp Beauty</h2>
+            <p>Shop now</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <form action="./subscribe.php" method="POST">
+            <label>Newsletter</label>
+            <input type="email" name="email" id="email" placeholder="*E-mail"/>
+            <button type="submit" name="subscribe" id="subscribe" class="button">Subscribe</button>
+          </form>
+      </div>
+    </footer>
+  </body>
+</html>
