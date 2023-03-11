@@ -17,6 +17,9 @@
     margin: 0px;
     padding: 0px;
 }
+ul{
+    list-style-type: none;
+}
 html{
     line-height: 1.15em;
     scroll-behavior: smooth;
@@ -38,6 +41,7 @@ a{
 a:hover{
     font-weight: 600;
 }
+
 input[type="text"], input[type="email"] {
     border: none;
 }
@@ -65,18 +69,15 @@ button{
 .float-right{
     float:right;
 }           /*END OF WARNING*/
-
+.border-bottom{
+    transition: 700ms;
+    border-bottom: 1px solid white;
+}
 :hover.border-bottom{
     border-bottom: 1px solid var(--thinBorder);
 }
 .current-page{
     color: var(--secondaryText);
-}
-.block-20{
-    width: 20vw;
-}
-.block-60{
-    width: 60vw;
 }
 .gradient-text{/*Intended for use on logo but ultimately left unused, it's here as a reference on how to put linear gradients on text*/
    background-color: var(--primaryText);
@@ -117,15 +118,15 @@ button{
     letter-spacing: 0.1rem;
     text-align: center;
 }
-.small-nav{
+nav{
     animation: flying-nav 700ms;
 }
-.small-nav ul{
+nav ul{
     display: flex;
     flex-flow: row wrap;
     
 }
-.small-nav ul li{
+nav ul li{
     list-style: none;
     margin-right: 1rem;
 }
@@ -147,49 +148,94 @@ button{
 main{
     width: 100%;
     margin-top: 60px;
+
+}
+.cover{
     display: grid;
-    grid-template-columns: 50% auto;
-    grid-template-rows: 960px;
-    transition: 300ms;
+    grid-template-columns: 0% auto;
+    grid-template-rows: 720px;
+    transition: all 700ms, color 100ms;
+    color:var(--primaryColor);
 }
-main:has(.left:hover){
-    grid-template-columns: 60% auto;
+.cover:hover{
+    grid-template-columns: 38.197% auto;
+    color: var(--primaryText);
+    transition: all 700ms, color 700ms 500ms;
 }
-main:has(.right:hover){
-    grid-template-columns: 40% auto;
+.right{
+    display:grid;
 }
-.text-item{
+.cta{/* cta = call to action*/
+    position: relative;
     place-self: center;
+    text-align: left;
+    line-height: 1.5em;
     animation: opacious 700ms ease;
 }
-.text-item h2, .text-item > a{
+
+.cta > a:hover{
+    font-weight: inherit;
+}
+
+.right .cta h2, .right .cta p{
     color: white;
+    transition: 300ms;
+}
+
+.right .cta:hover h2, .right .cta:hover p {
+    color: var(--primaryColor);
+}
+
+.cta::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    left: 50%;
+    bottom:-10px;
+    background-color: var(--primaryColor);
+    transition: all ease-in-out .2s;
+}
+.cta:hover::after{
+    width: 100%;
+    left: 0;
 }
 .img-item{
     place-self: stretch;
     transition: width 0.3s ease-in-out;
 }
-.left.img-item{
+.left{  
     grid-column: 1/2;
-    background-image: url("../img/ilya-mirnyy.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-
+    transition: opacity 700ms ease;
+    animation:flying-left 700ms ease;    
+    padding: 1.15em;
 }
 .right.img-item{
     grid-column: 2 /3;
-    background-image: url("../img/olena-sergienko.jpg");
+    background-image: url("../img/cover.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
-.left,.right{
-    display:grid;
-}
-.left{
-    animation:flying-left 700ms ease; 
-}
+
 .right{
+    position:relative;
+   
     animation: flying-right 700ms ease;
+}
+
+
+.filter{
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 700ms;
+}   
+:hover.cover .filter{
+    background-color: rgba(0, 0, 0, 0.5);
 }
 @keyframes opacious { 
     0% {
