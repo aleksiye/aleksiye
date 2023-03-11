@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Gloock&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root{/*This is where I define my color pallette*/
     
     --primaryColor:     #ffffff;
@@ -12,6 +12,41 @@
     --pastelPeach:      #F8C3AF;
     --pastelPink:       #EA9ABB;
 }
+@keyframes opacious { 
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+@keyframes flying-nav{
+    0% {
+        opacity: 0;
+        transform: translate(-400px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+@keyframes flying-left{
+    0%{
+        transform: translate(-540px);
+    }
+    100%{
+        transform: translate(0px);
+    }
+}
+@keyframes flying-right{
+    0%{
+        transform: translate(540px);
+    }
+    100%{
+        transform: translate(0px);
+    }
+}
 *{
     box-sizing: border-box;
     margin: 0px;
@@ -21,12 +56,10 @@ ul{
     list-style-type: none;
 }
 html{
-    line-height: 1.15em;
-    scroll-behavior: smooth;
+    line-height: 1.2;
+    scroll-behavior:smooth;
 }
-title{
-    font-family: 'Cormorant Garamond' serif;
-}
+
 body{
     font-family: 'Montserrat', sans-serif;
     color: var(--primaryText);
@@ -79,6 +112,9 @@ button{
 .current-page{
     color: var(--secondaryText);
 }
+.emphasize{
+    font-weight: 600;
+}
 .gradient-text{/*Intended for use on logo but ultimately left unused, it's here as a reference on how to put linear gradients on text*/
    background-color: var(--primaryText);
    background-image: linear-gradient(45deg, var(--pastelRed), var(--primaryText));
@@ -97,7 +133,7 @@ button{
 .top-block{
     width: 100%;
     min-width: 250px;
-    padding: 2em;
+    padding: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -115,6 +151,7 @@ button{
 .top-block h1{
     font-size: 24px;
     font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
     letter-spacing: 0.1rem;
     text-align: center;
 }
@@ -162,6 +199,9 @@ main{
     color: var(--primaryText);
     transition: all 700ms, color 700ms 500ms;
 }
+.left{
+    display: grid;
+}
 .right{
     display:grid;
 }
@@ -169,7 +209,6 @@ main{
     position: relative;
     place-self: center;
     text-align: left;
-    line-height: 1.5em;
     animation: opacious 700ms ease;
 }
 
@@ -186,7 +225,7 @@ main{
     color: var(--primaryColor);
 }
 
-.cta::after{
+.cta::after, .learn::after{
     content: '';
     position: absolute;
     width: 0;
@@ -196,7 +235,10 @@ main{
     background-color: var(--primaryColor);
     transition: all ease-in-out .2s;
 }
-.cta:hover::after{
+.learn::after{
+    background-color: var(--primaryText);
+}
+.cta:hover::after, .learn:hover::after{
     width: 100%;
     left: 0;
 }
@@ -210,9 +252,38 @@ main{
     animation:flying-left 700ms ease;    
     padding: 1.15em;
 }
+aside{
+    place-self: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: center;
+}
+aside > h2{
+    font-size: 24px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+}
+aside > p, aside > a{
+    font-size: 12px;
+}
+.learn{
+    width: fit-content;
+    text-align: center;
+    position:relative;
+    margin: 1rem auto;
+}
+.learn > a{
+    transition:inherit;
+    color: inherit;
+}
+.learn > a:hover{
+    font-weight: inherit;
+    color: inherit;
+}
 .right.img-item{
     grid-column: 2 /3;
     background-image: url("../img/cover.jpg");
+    background-origin: border-box;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -233,46 +304,11 @@ main{
     right: 0;
     bottom: 0;
     transition: 700ms;
+    background-color: rgba(0, 0, 0, 0.1);
 }   
 :hover.cover .filter{
     background-color: rgba(0, 0, 0, 0.5);
 }
-@keyframes opacious { 
-    0% {
-      opacity: 0;
-    }
-  
-    100% {
-      opacity: 1;
-    }
-  }
-@keyframes flying-nav{
-    0% {
-        opacity: 0;
-        transform: translate(-400px);
-    }
-    100%{
-        opacity: 1;
-        transform: translate(0px);
-    }
-}
-@keyframes flying-left{
-    0%{
-        transform: translate(-540px);
-    }
-    100%{
-        transform: translate(0px);
-    }
-}
-@keyframes flying-right{
-    0%{
-        transform: translate(540px);
-    }
-    100%{
-        transform: translate(0px);
-    }
-}
-
 /*FOOTER SECTION */
 .footer-container{
     padding: 2em;
