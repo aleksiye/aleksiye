@@ -56,7 +56,7 @@ ul{
     list-style-type: none;
 }
 html{
-    line-height: 1.2;
+    line-height: 1.25;
     scroll-behavior:smooth;
 }
 
@@ -115,6 +115,9 @@ button{
 .emphasize{
     font-weight: 600;
 }
+.color-text{
+    color: var(--pastelPink );
+}
 .gradient-text{/*Intended for use on logo but ultimately left unused, it's here as a reference on how to put linear gradients on text*/
    background-color: var(--primaryText);
    background-image: linear-gradient(45deg, var(--pastelRed), var(--primaryText));
@@ -139,14 +142,9 @@ button{
     justify-content: space-between;
     align-items: baseline;
 }
-@media (max-width: 800px) {
-    .top-block{
-        flex-direction: column;
-        align-items: center;
-    }
-}
+
 .logo{
-    margin-right: 10%;
+    padding-right: 5rem;
 }
 .top-block h1{
     font-size: 24px;
@@ -190,25 +188,32 @@ main{
 .cover{
     display: grid;
     grid-template-columns: 0% auto;
-    grid-template-rows: 720px;
-    transition: all 700ms, color 100ms;
+    grid-template-rows: 45rem;/*720px*/
     color:var(--primaryColor);
+    transition: all 700ms, color 100ms;
+    overflow: hidden;
 }
 .cover:hover{
     grid-template-columns: 38.197% auto;
+    grid-template-rows: 45rem;/*720px*/
     color: var(--primaryText);
     transition: all 700ms, color 700ms 500ms;
+    overflow: hidden;
 }
-.left{
+.grid{
     display: grid;
 }
-.right{
-    display:grid;
+.right-cover{
+    display: grid;
+    grid-column: 2 / 3;
+    position:relative;
+    transition: width 0.3s ease-in-out;
+    animation: flying-right 700ms ease;
 }
 .cta{/* cta = call to action*/
-    position: relative;
-    place-self: center;
-    text-align: left;
+    position:             relative;
+    place-self:             center;
+    text-align:               left;
     animation: opacious 700ms ease;
 }
 
@@ -216,16 +221,16 @@ main{
     font-weight: inherit;
 }
 
-.right .cta h2, .right .cta p{
+.cta h2, .cta p{
     color: white;
     transition: 300ms;
 }
 
-.right .cta:hover h2, .right .cta:hover p {
+.cta:hover h2, .cta:hover p {
     color: var(--primaryColor);
 }
 
-.cta::after, .learn::after{
+.cta::after, .cta-black::after{
     content: '';
     position: absolute;
     width: 0;
@@ -233,24 +238,28 @@ main{
     left: 50%;
     bottom:-10px;
     background-color: var(--primaryColor);
-    transition: all ease-in-out .2s;
+    transition: all ease-in-out 200ms;
 }
-.learn::after{
+.cta-black::after{
     background-color: var(--primaryText);
 }
-.cta:hover::after, .learn:hover::after{
+.cta:hover::after, .cta-black:hover::after{
     width: 100%;
     left: 0;
 }
-.img-item{
+.cover-img{
+    background-image: url("../img/cover.jpg");
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-size: cover;
     place-self: stretch;
-    transition: width 0.3s ease-in-out;
 }
-.left{  
+.left-cover{
+    display: grid;  
     grid-column: 1/2;
     transition: opacity 700ms ease;
     animation:flying-left 700ms ease;    
-    padding: 1.15em;
+    padding: 1.15rem;
 }
 aside{
     place-self: center;
@@ -258,7 +267,7 @@ aside{
     padding-right: 2rem;
     text-align: center;
 }
-aside > h2{
+aside > h1{
     font-size: 24px;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
@@ -266,35 +275,20 @@ aside > h2{
 aside > p, aside > a{
     font-size: 12px;
 }
-.learn{
+.cta-black{
     width: fit-content;
     text-align: center;
     position:relative;
     margin: 1rem auto;
 }
-.learn > a{
+.cta-black > a{
     transition:inherit;
     color: inherit;
 }
-.learn > a:hover{
+.cta-black > a:hover{
     font-weight: inherit;
     color: inherit;
 }
-.right.img-item{
-    grid-column: 2 /3;
-    background-image: url("../img/cover.jpg");
-    background-origin: border-box;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.right{
-    position:relative;
-   
-    animation: flying-right 700ms ease;
-}
-
-
 .filter{
     width: inherit;
     height: inherit;
@@ -309,6 +303,72 @@ aside > p, aside > a{
 :hover.cover .filter{
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+.center{
+    width: 61.803%;
+    margin: 0 auto;
+}
+.whatis{
+    margin-top: 5rem;
+    margin-bottom: 7rem;
+}
+.whatis > h2{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+
+}
+.whatis > p{
+    font-size: 12px;
+    text-align: center;
+    margin: 1rem 0;
+}
+.left{
+    display: grid;
+    grid-template-columns: 38.197% auto;
+    grid-auto-rows: min-content;
+}
+.right{
+    display: grid;
+    grid-template-columns: 61.803% auto;
+    grid-auto-rows: min-content;
+}
+.right-image{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+.right-text{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+.left-text, .right-text{
+    place-self: center;
+    text-align: center;
+}
+.left-image{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+.left-text{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+.left-image > img, .right-image > img{
+    max-width: 100%;
+    max-height: auto;
+}
+
+.left-text p, .right-text p{
+    font-size: 12px;
+    margin: 2rem 3rem;
+}
+.left-text h2, .right-text h2{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
 /*FOOTER SECTION */
 .footer-container{
     padding: 2em;
@@ -327,4 +387,16 @@ aside > p, aside > a{
 }
 .footer-container form > input[type="text"]{
     border-bottom: 1px solid var(--primaryText);
+}
+
+
+
+@media (max-width: 800px) {
+    .top-block{
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo{
+        padding-right: 0;
+    }
 }
