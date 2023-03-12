@@ -230,14 +230,14 @@ main{
     color: var(--primaryColor);
 }
 
-.cta::after, .cta-black::after{
-    content: '';
-    position: absolute;
+.cta::after, .cta-black::after{/*creates a block element inside the .cta class*/
+    content: '';               /*at first it's invisible because width 0      */
+    position: absolute;        /*but after, the width transitions to 100%     */
     width: 0;
     height: 1px;
     left: 50%;
-    bottom:-10px;
-    background-color: var(--primaryColor);
+    bottom:-10px;              /*quirk of ::after pseudo-class creating an element after */
+    background-color: var(--primaryColor);/*the content (and not after the element itself)*/ 
     transition: all ease-in-out 200ms;
 }
 .cta-black::after{
