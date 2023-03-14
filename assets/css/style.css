@@ -125,21 +125,9 @@ button{
 .color-text{
     color: var(--pastelPink );
 }
-.gradient-text{/*Intended for use on logo but ultimately left unused, it's here as a reference on how to put linear gradients on text*/
-   background-color: var(--primaryText);
-   background-image: linear-gradient(45deg, var(--pastelRed), var(--primaryText));
-   background-size: 100%;
-   background-repeat: no-repeat;
-
-   background-clip: text;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent; 
-   -moz-background-clip: text;
-   -moz-text-fill-color: transparent;
-}
 /* GLOBAL CLASSES SECTION */
 
-/*TOP NAV, LOGO AND SEARCH */
+/*TOP*/
 .top-block{
     width: 100%;
     min-width: 250px;
@@ -147,35 +135,80 @@ button{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    position:relative;
+}
+.icon-ribbon{
+    width: 280px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: baseline;
 }
 
-.logo{
-    padding-right: 5rem;
-}
 .top-block h1{
-    font-size: 24px;
+    font-size: 1.5rem;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
     letter-spacing: 0.1rem;
     text-align: center;
 }
+#logo{
+    position:absolute;
+    top:1rem;
+    left: calc(50% - 1.5rem * 4);
+    top: 1.6rem;
+}
+.this{
+    border-bottom: 1px solid black;
+}
 nav{
     animation: flying-nav 700ms;
+    --width: calc(100%);
 }
 nav ul{
+    position:relative;
     display: flex;
     flex-flow: row wrap;
     
 }
-nav ul li{
+nav ul li{ 
     list-style: none;
     margin-right: 1rem;
+}
+
+.tooltip::after{
+    content:'';
+    display: inline-block;
+    position: absolute;
+    width: 0;
+    font-size: 12px;
+    bottom: -4.5rem;
+    left: 0;
+    color: #ffffff;
+    transition: all ease 700ms 250ms;
+}
+.tooltip:hover::after{
+    color:#000000;
+    width:max-content;
+}
+#home:hover::after{
+    content: 'Return to the homepage';
+}
+#bespoke:hover::after{
+    content: 'Discover our range of bespoke clothing options';
+}
+#consult:hover::after{
+    content: 'Schedule an in-person or online consultation with us';
+}
+#contact:hover::after{
+    content: ' Get in touch with any questions or inquiries you may have';
 }
 .search {
     width: fit-content;
     border-bottom: 1px solid var(--secondaryText);
 }
+
 
 
 .search input[type="text"]::placeholder{
@@ -184,7 +217,7 @@ nav ul li{
 .search input[type="text"]:focus::placeholder{
     color: var(--secondaryText);
     
-}/*TOP NAV, LOGO AND SEARCH */
+}/*TOP*/
 
 /* MAIN SECTION, A GALLERY GRID*/
 main{
@@ -242,7 +275,7 @@ main{
     position: absolute;        /*but after, the width transitions to 100%     */
     width: 0;
     height: 1px;
-    left: 0;
+    left: 50%;
     bottom:-10px;              /*quirk of ::after pseudo-class creating an element after */
     background-color: var(--primaryColor);/*the content (and not after the element itself)*/ 
     transition: all ease-in-out 200ms;
@@ -407,7 +440,7 @@ footer form > input[type="text"]{
         flex-direction: column;
         align-items: center;
     }
-    .logo{
+    #logo{
         padding-right: 0;
     }
 }
