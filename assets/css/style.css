@@ -102,12 +102,19 @@ button{
 .float-right{
     float:right;
 }           /*END OF WARNING*/
-.border-bottom{
+.border-btm{
     transition: 700ms;
     border-bottom: 1px solid white;
 }
-:hover.border-bottom{
+.border-top{
+    transition: 700ms;
+    border-top: 1px solid white;
+}
+:hover.border-btm{
     border-bottom: 1px solid var(--thinBorder);
+}
+:hover.border-top{
+    border-top: 1px solid var(--thinBorder);
 }
 .current-page{
     color: var(--secondaryText);
@@ -235,7 +242,7 @@ main{
     position: absolute;        /*but after, the width transitions to 100%     */
     width: 0;
     height: 1px;
-    left: 50%;
+    left: 0;
     bottom:-10px;              /*quirk of ::after pseudo-class creating an element after */
     background-color: var(--primaryColor);/*the content (and not after the element itself)*/ 
     transition: all ease-in-out 200ms;
@@ -345,6 +352,8 @@ aside > p, aside > a{
 .left-text, .right-text{
     place-self: center;
     text-align: center;
+    width: 68.803%;
+    padding: 5rem 0;
 }
 .left-image{
     grid-column: 1 / 2;
@@ -370,22 +379,24 @@ aside > p, aside > a{
 }
 
 /*FOOTER SECTION */
-.footer-container{
+footer{
+    margin-top: 5rem;
+    border-top: 1px solid var(--thinBorder);
     padding: 2em;
     display: flex;
     flex-direction: row;
     min-height: 360px;
 }
-.footer-container form{
+footer form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.footer-container form > input[type="email"]{
+footer form > input[type="email"]{
     border-bottom: 1px solid var(--primaryText);
 }
-.footer-container form > input[type="text"]{
+footer form > input[type="text"]{
     border-bottom: 1px solid var(--primaryText);
 }
 
