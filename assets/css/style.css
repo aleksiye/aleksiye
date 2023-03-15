@@ -87,6 +87,9 @@ button{
     border: none;
     font: inherit;
 }
+p{
+    font-size:0.75rem;
+}
 
 /* GLOBAL CLASSES SECTION */
 /* - intended to contain frequently used classes */
@@ -138,12 +141,12 @@ button{
     align-items: center;
     position:relative;
 }
-.icon-ribbon{
-    width: 280px;
+.phone-ribbon{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
+    position:relative;
 }
 
 .top-block h1{
@@ -270,7 +273,7 @@ main{
     color: var(--primaryColor);
 }
 
-.cta::after, .cta-black::after{/*creates a block element inside the .cta class*/
+.cta::after, .cta-black::after, .phone-ribbon::after{/*creates a block element inside the .cta class*/
     content: '';               /*at first it's invisible because width 0      */
     position: absolute;        /*but after, the width transitions to 100%     */
     width: 0;
@@ -280,10 +283,10 @@ main{
     background-color: var(--primaryColor);/*the content (and not after the element itself)*/ 
     transition: all ease-in-out 200ms;
 }
-.cta-black::after{
+.cta-black::after,.phone-ribbon::after{
     background-color: var(--primaryText);
 }
-.cta:hover::after, .cta-black:hover::after{
+.cta:hover::after, .cta-black:hover::after, .phone-ribbon:hover::after{
     width: 100%;
     left: 0;
 }
@@ -415,11 +418,50 @@ aside > p, aside > a{
 footer{
     margin-top: 5rem;
     border-top: 1px solid var(--thinBorder);
-    padding: 2em;
     display: flex;
     flex-direction: row;
-    min-height: 360px;
+    align-items: baseline;
+    padding: 1rem 0;
 }
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+#copyright{
+    width: 38.197%;
+    padding-left: 2rem;
+}
+
+footer h3{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    color: var(--secondaryText);
+    margin-right: 1rem;
+}
+footer p{
+    color: var(--secondaryText);
+}
+footer ul li{
+    padding: 0.3rem;
+}
+footer a{
+    font-size: 0.8rem;
+}
+#footer-icons i{
+    font-size: 1rem;
+    margin: 0 0.5rem;
+    color: var(--secondaryText);
+}
+#footer-links{
+    width: 68.803%;
+    justify-content: space-between;
+    padding-right: 2rem;
+}
+.spacer{
+    width: 1rem;
+}
+/*
 footer form{
     display: flex;
     flex-direction: column;
@@ -431,7 +473,7 @@ footer form > input[type="email"]{
 }
 footer form > input[type="text"]{
     border-bottom: 1px solid var(--primaryText);
-}
+}*/
 
 
 
