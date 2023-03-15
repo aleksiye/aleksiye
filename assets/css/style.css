@@ -88,7 +88,7 @@ button{
     font: inherit;
 }
 p{
-    font-size:0.75rem;
+    font-size:1rem;
 }
 
 /* GLOBAL CLASSES SECTION */
@@ -185,7 +185,7 @@ nav ul li{
     display: inline-block;
     position: absolute;
     width: 0;
-    font-size: 12px;
+    font-size: 1rem;
     bottom: -4.5rem;
     left: 0;
     color: #ffffff;
@@ -233,6 +233,7 @@ main{
     grid-template-columns: 0% auto;
     grid-template-rows: 45rem;/*720px*/
     color:var(--primaryColor);
+    will-change: transform;
     transition: all 700ms, color 100ms;
     overflow: hidden;
 }
@@ -267,6 +268,9 @@ main{
 .cta h2, .cta p{
     color: white;
     transition: 300ms;
+}
+.cta p{
+    font-size: 1rem;
 }
 
 .cta:hover h2, .cta:hover p {
@@ -316,7 +320,7 @@ aside > h1{
     font-weight: 600;
 }
 aside > p, aside > a{
-    font-size: 12px;
+    font-size: 1rem;
 }
 .cta-black{
     width: fit-content;
@@ -363,7 +367,7 @@ aside > p, aside > a{
 
 }
 .whatis > p{
-    font-size: 12px;
+    font-size: 1rem;
     text-align: center;
     margin: 1rem 0;
 }
@@ -405,7 +409,7 @@ aside > p, aside > a{
 }
 
 .left-text p, .right-text p{
-    font-size: 12px;
+    font-size: 1rem;
     margin: 2rem 3rem;
 }
 .left-text h2, .right-text h2{
@@ -446,7 +450,7 @@ footer ul li{
     padding: 0.3rem;
 }
 footer a{
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 #footer-icons i{
     font-size: 1rem;
