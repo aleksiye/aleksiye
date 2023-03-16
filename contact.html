@@ -21,7 +21,7 @@
             <ul>  
               <li id="home" class="this tooltip"><a href="index.html">Home</a>
               </li>
-              <li id="bespoke" class="tooltip"><a href="#learn-more">Bespoke Clothing</a>
+              <li id="bespoke" class="tooltip"><a href="portfolio.html">Bespoke Clothing</a>
               </li>
               <li id="contact" class="tooltip"><a href="contact.html">Contact Us</a>
               </li>
@@ -40,7 +40,20 @@
       </div>
 </header>
 <main>
-    
+    <div id="contact-form">
+        <form action="contact.php">
+            <div class="form-column">
+            <input type="text" name="name" id="name" placeholder="Name" required>
+            <input type="text" name="surname" id="surname" placeholder="Surname" required>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="text" name="phone" id="phone" placeholder="Your phone number">
+            </div>
+            <div class="form-column">
+            <textarea id="message" name="message">Type your message here</textarea>
+            <input type="submit" value="Send">
+            </div>
+        </form>
+    </div>
 </main>
 <footer>
   <div id="copyright" class="flex-row">

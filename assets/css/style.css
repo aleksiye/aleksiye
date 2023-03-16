@@ -90,7 +90,6 @@ button{
 p{
     font-size:1rem;
 }
-
 /* GLOBAL CLASSES SECTION */
 /* - intended to contain frequently used classes */
 
@@ -131,6 +130,9 @@ p{
 /* GLOBAL CLASSES SECTION */
 
 /*TOP*/
+header{
+    margin-bottom: 60px;
+}
 .top-block{
     width: 100%;
     min-width: 250px;
@@ -185,7 +187,7 @@ nav ul li{
     display: inline-block;
     position: absolute;
     width: 0;
-    font-size: 1rem;
+    font-size: 0.75rem;
     bottom: -4.5rem;
     left: 0;
     color: #ffffff;
@@ -225,8 +227,6 @@ nav ul li{
 /* MAIN SECTION, A GALLERY GRID*/
 main{
     width: 100%;
-    margin-top: 60px;
-
 }
 .cover{
     display: grid;
@@ -277,7 +277,7 @@ main{
     color: var(--primaryColor);
 }
 
-.cta::after, .cta-black::after, .phone-ribbon::after{/*creates a block element inside the .cta class*/
+.cta::after, .cta-black::after, .phone-ribbon::after, .underline::after{/*creates a block element inside the .cta class*/
     content: '';               /*at first it's invisible because width 0      */
     position: absolute;        /*but after, the width transitions to 100%     */
     width: 0;
@@ -287,10 +287,10 @@ main{
     background-color: var(--primaryColor);/*the content (and not after the element itself)*/ 
     transition: all ease-in-out 200ms;
 }
-.cta-black::after,.phone-ribbon::after{
+.cta-black::after,.phone-ribbon::after, .underline::after{
     background-color: var(--primaryText);
 }
-.cta:hover::after, .cta-black:hover::after, .phone-ribbon:hover::after{
+.cta:hover::after, .cta-black:hover::after, .phone-ribbon:hover::after, .underline:hover::after{
     width: 100%;
     left: 0;
 }
@@ -381,6 +381,11 @@ aside > p, aside > a{
     grid-template-columns: 61.803% auto;
     grid-auto-rows: min-content;
 }
+.center-grid{
+    display: grid;
+    grid-template-columns: 38.197% auto 38.197%;
+    grid-auto-rows: min-content;
+}
 .right-image{
     grid-column: 2 / 3;
     grid-row: 1 / 2;
@@ -388,6 +393,14 @@ aside > p, aside > a{
 .right-text{
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+}
+.center-left{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.center-right{
+    grid-column: 3/4;
+    grid-row: 1/2;
 }
 .left-text, .right-text{
     place-self: center;
@@ -403,7 +416,7 @@ aside > p, aside > a{
     grid-column: 1 / 2;
     grid-row: 1 / 2;
 }
-.left-image > img, .right-image > img{
+.left-image img, .right-image img{
     max-width: 100%;
     max-height: auto;
 }
@@ -464,6 +477,43 @@ footer a{
 }
 .spacer-1{
     width: 1rem;
+}
+#portfolio{
+    width: 61.803%;
+    margin: 0 auto;
+}
+#portfolio p{
+    font-size: 0.75rem;
+}
+#portfolio .left-image, #portfolio .right-image{
+    filter: drop-shadow(0.5rem 0.5rem 0.1rem rgba(0,0,0,0.6));
+}
+.underline{
+    position: relative;
+    width: 20%;
+    text-align: center;
+    margin: 1rem auto;
+}
+#contact-form{
+    width: 61.803%;
+    margin: 0 auto;
+}
+#contact-form form{
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.form-column{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#contact-form input[type="text"], #contact-form input[type="email"]{
+    border-bottom: 1px solid var(--primaryText);
+    margin: 1rem;
 }
 /*
 footer form{
