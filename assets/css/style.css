@@ -165,6 +165,7 @@ header{
     top: 1.6rem;
 }
 .this{
+    padding-bottom: 0.2rem;
     border-bottom: 1px solid black;
 }
 nav{
