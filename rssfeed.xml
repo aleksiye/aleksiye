@@ -4,5 +4,10 @@
         <title>Gar De'Roba | bespoke clothing company</title>
         <link>https://aleksiye.github.io/aleksiye/</link>
         <description>Your vision, our craftsmanship</description>
+        <item>
+            <title>DevBlog verA0.01</title>
+            <link>https://aleksiye.github.io/aleksiye/index.html</link>
+            <description>Bunch of fixes, increased font-size. Added footer, portfolio and contact 16th March 2023, ~3AM</description>
+        </item>
     </channel>
 </rss>
