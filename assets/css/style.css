@@ -479,14 +479,14 @@ footer a{
 .spacer-1{
     width: 1rem;
 }
-#portfolio{
+#portfolio, #author{
     width: 61.803%;
     margin: 0 auto;
 }
 #portfolio p{
     font-size: 0.75rem;
 }
-#portfolio .left-image, #portfolio .right-image{
+#portfolio .left-image, #portfolio .right-image, #author .left-image{
     filter: drop-shadow(0.5rem 0.5rem 0.1rem rgba(0,0,0,0.6));
 }
 .underline{
@@ -500,17 +500,50 @@ footer a{
     margin: 0 auto;
 }
 #contact-form form{
-    width: inherit;
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
 }
+#contact-form textarea{
+    border: none;
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    color: var(--secondaryText);
+    border-color: var(--secondaryText);
+    transition: all 200ms;
+    width: 100%;
+    height: 10rem;
+    padding: 1rem;
+    resize: none;
+    margin: 1rem;
+}
+#contact-form textarea:focus{
+    outline: none;
+    border-color: var(--primaryText);
+}
+#contact-form input[type="submit"]{
+    background-color: white;
+    border: none;
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: var(--primaryText);
+    color: var(--primaryText);
+    width: 10%; 
+    margin: 1rem;
+    padding: 0.5rem;    
+    box-shadow: 3px -3px 3px rgba(0, 0, 0, 0.1);
+}
 .form-column{
-    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.form-row{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
 }
 #contact-form input[type="text"], #contact-form input[type="email"]{
     border-bottom: 1px solid var(--primaryText);
@@ -530,7 +563,11 @@ footer form > input[type="text"]{
     border-bottom: 1px solid var(--primaryText);
 }*/
 
-
+#author h3{
+    font-size: 24px;
+    font-family: 'Cormorant-Garamond', serif;
+    font-weight: 400;
+}
 
 @media (max-width: 800px) {
     .top-block{

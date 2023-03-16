@@ -42,15 +42,19 @@
 <main>
     <div id="contact-form">
         <form action="contact.php">
-            <div class="form-column">
+            <div class="form-row">
             <input type="text" name="name" id="name" placeholder="Name" required>
             <input type="text" name="surname" id="surname" placeholder="Surname" required>
+            </div>
+            <div class="form-row">
             <input type="email" name="email" id="email" placeholder="Email" required>
             <input type="text" name="phone" id="phone" placeholder="Your phone number">
             </div>
-            <div class="form-column">
+            <div class="form-row">
             <textarea id="message" name="message">Type your message here</textarea>
-            <input type="submit" value="Send">
+            </div>
+            <div class="form-row">
+              <input type="submit" value="Send">
             </div>
         </form>
     </div>
@@ -62,9 +66,9 @@
   </div>
   <div id="footer-links" class="flex-row">
     <ul class="flex-row">  
-        <li id="home" class="tooltip"><a href="#header">Home</a>
+        <li id="home" class="tooltip"><a href="index.html">Home</a>
         </li>
-        <li id="bespoke" class="tooltip"><a href="#learn-more">Bespoke Clothing</a>
+        <li id="bespoke" class="tooltip"><a href="portfolio.html">Bespoke Clothing</a>
         </li>
         <li id="contact" class="this tooltip"><a href="contact.html">Contact Us</a>
         </li>
