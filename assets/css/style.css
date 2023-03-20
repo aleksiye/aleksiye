@@ -555,6 +555,8 @@ footer a{
 #contact-box iframe{
     width: 100%;
     height: 17rem;
+    border:none;
+    margin: none;
 }
 #contact-box h2{
     font-size: 24px;
