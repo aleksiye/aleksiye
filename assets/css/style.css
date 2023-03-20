@@ -598,21 +598,7 @@ footer a{
     font-weight: 600;
     margin: 1rem 0;
 }
-
-/*
-footer form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-footer form > input[type="email"]{
-    border-bottom: 1px solid var(--primaryText);
-}
-footer form > input[type="text"]{
-    border-bottom: 1px solid var(--primaryText);
-}*/
-#anya{
+.article-grid{
     display: grid;
     grid-template-columns: 600px auto;
     grid-template-rows: min-content;
@@ -689,7 +675,43 @@ footer form > input[type="text"]{
     right: -3px;
     bottom: -3px;
 }
-
+#tamara-content{
+    width: 270px;
+    height: 400px;
+    padding: 1rem;
+    border: 1px solid #000000;
+}
+#tamara div:nth-of-type(2){
+    justify-content: space-between;
+    align-items: center;
+}
+#tamara-content h2{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 2rem;
+}
+#tamara-content p:nth-of-type(1){
+    font-style: italic;
+    font-size: 1.25rem;
+}
+#tamara-content p:nth-of-type(2){
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+#slogan{
+    padding-right: 6rem;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+#slogan p{
+    color: var(--secondaryText);
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
 @media (max-width: 800px) {
     .top-block{
         flex-direction: column;
