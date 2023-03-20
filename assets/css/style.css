@@ -207,8 +207,11 @@ nav ul li{
 #consult:hover::after{
     content: 'Schedule an in-person or online consultation with us';
 }
+#clients:hover::after{
+    content:'Take a look at what our clients say about us';
+}
 #contact:hover::after{
-    content: ' Get in touch with any questions or inquiries you may have';
+    content: 'Get in touch with any questions or inquiries you may have';
 }
 .search {
     width: fit-content;
