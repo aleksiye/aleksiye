@@ -318,7 +318,7 @@ aside{
     padding-right: 2rem;
     text-align: center;
 }
-aside > h1{
+aside > h2{
     font-size: 24px;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
