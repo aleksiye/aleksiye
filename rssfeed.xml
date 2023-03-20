@@ -9,5 +9,10 @@
             <link>https://aleksiye.github.io/aleksiye/index.html</link>
             <description>Bunch of fixes, increased font-size. Added footer, portfolio and contact 16th March 2023, ~3AM</description>
         </item>
+        <item>
+            <title>DevBlog verA0.02</title>
+            <link>https://aleksiye.github.io/aleksiye/clients.html</link>
+            <description>Added a testimonials page</description>
+        </item>
     </channel>
 </rss>
