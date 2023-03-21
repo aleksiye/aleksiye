@@ -782,7 +782,7 @@ footer a{
     width: inherit;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: fit-content auto;
     gap: 1.5rem;
 }   
 article.center-grid{
