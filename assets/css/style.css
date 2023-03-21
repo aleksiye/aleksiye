@@ -832,7 +832,7 @@ article.center-grid{
 #blazer-content h3,#custom-txt h2{
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 2rem;
+    font-size: 2rem;    
     margin: 1rem 0;
 }
 .line-grid{
@@ -844,7 +844,10 @@ article.center-grid{
     width: 100%;
     height: auto;
 }
-
+#custom-txt h2{
+    margin-top: 0rem;
+    margin-bottom: 3rem;
+}
 
 @media (max-width: 800px) {
     .top-block{
