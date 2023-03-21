@@ -332,6 +332,10 @@ aside > p, aside > a{
     position:relative;
     margin: 1rem auto;
 }
+#consultation div.cta-black,#portfolio div.cta-black{
+   margin: 1rem 0;
+}
+
 .cta-black > a{
     transition:inherit;
     color: inherit;
@@ -829,11 +833,14 @@ article.center-grid{
     padding: 3rem 1.5rem;
     border: 1px solid #000;
 }
-#blazer-content h3,#custom-txt h2{
+#blazer-content h3,#custom-txt h2,#consultation h2{
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-size: 2rem;    
     margin: 1rem 0;
+}
+#consultation h2{
+    font-size: 2.25rem;
 }
 .line-grid{
     display: grid;
@@ -848,7 +855,30 @@ article.center-grid{
     margin-top: 0rem;
     margin-bottom: 3rem;
 }
+#consultation{
+    padding-top:6rem;
+    padding-left: 1rem;
+}
+#portfolio + img{
+    width: 300px;
+    height: auto;
+}
 
+.gap-15{
+    grid-column-gap:1.5rem;
+}
+.mar-15{
+    margin-bottom: 1.5rem;
+}
+.article-con-br{
+    position: relative;
+}
+#portfolio{
+    position: absolute;
+    bottom: 1rem;
+    right: 0;
+    text-align: right;
+}
 @media (max-width: 800px) {
     .top-block{
         flex-direction: column;
