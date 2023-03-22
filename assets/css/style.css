@@ -127,6 +127,14 @@ p{
 .color-text{
     color: var(--pastelPink );
 }
+.header-italic{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+}
+.block-pad{
+    border: 1px solid #000000;
+    padding: 3rem 1.5rem;
+}
 /* GLOBAL CLASSES SECTION */
 
 /*TOP*/
@@ -332,10 +340,12 @@ aside > p, aside > a{
     position:relative;
     margin: 1rem auto;
 }
-#consultation div.cta-black,#portfolio div.cta-black{
+article div.cta-black,article a.cta-black{
    margin: 1rem 0;
 }
-
+article a.cta-black:hover{
+    font-weight: 400;
+}
 .cta-black > a{
     transition:inherit;
     color: inherit;
@@ -845,7 +855,6 @@ article.center-grid{
 .line-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 1.5rem;
 }
 #custom-img img{
     width: 100%;
@@ -864,20 +873,51 @@ article.center-grid{
     height: auto;
 }
 
+#vision + img{
+    width: 100%;
+    height: 100%;
+}
+#vision h2{
+    font-size: 1.875rem;
+    margin-bottom: 1rem;
+}
 .gap-15{
     grid-column-gap:1.5rem;
 }
 .mar-15{
     margin-bottom: 1.5rem;
 }
-.article-con-br{
-    position: relative;
-}
 #portfolio{
     position: absolute;
-    bottom: 1rem;
-    right: 0;
+    bottom: 5rem;
+    right:0;
     text-align: right;
+    width:100%;
+    height: fit-content;
+    gap: none;
+
+}
+#portfolio div:first-of-type{
+    width: 3rem;
+    border-bottom: 1px solid #000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#portfolio div:last-of-type{
+    padding: 2rem 0 2rem 3rem;
+    width: 80%;
+    height: 100%;
+    border-style: solid;
+    border-color: #000;
+    border-width: 1px 0 0px 1px;
+}
+#portfolio h2{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+#portfolio p{
+    font-size: 1rem;
 }
 @media (max-width: 800px) {
     .top-block{
