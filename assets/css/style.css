@@ -858,7 +858,7 @@ article.center-grid{
 }
 #custom-img img{
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 #custom-txt h2{
     margin-top: 0rem;
