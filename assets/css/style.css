@@ -825,6 +825,7 @@ article.center-grid{
     font-size: 3rem;
 }
 #blazer-img-tall img{
+    padding-top: 6px;
     width: 100%;
     height: auto;
 }
