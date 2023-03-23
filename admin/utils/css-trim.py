@@ -3,6 +3,23 @@ import sys
 import re
 from bs4 import BeautifulSoup
 
+def trim_css(css_file,selectors):
+     # Create a backup of the original file
+    backup_file = os.path.splitext(css_file)[0] + '_backup.css'
+    with open(css_file, 'r') as original, open(backup_file, 'w') as backup:
+        backup.write(original.read())
+    
+    # Open the original file again and remove the specified CSS blocks
+    with open(css_file, 'r') as f:
+        css = f.read()
+        for selector in selectors:
+            css = re.sub(f'{selector}[^{{]*{{[^}}]*}}', '', css)
+    
+    # Overwrite the original file with the updated CSS
+    with open(css_file, 'w') as f:
+        f.write(css)
+
+
 #function that compares extracted ids and classes from html file(s) with css selectors
 def find_missing_selectors(html_selectors, css_selectors):
     missing_selectors = []
@@ -53,9 +70,9 @@ def extract_css_selectors(file):
     with open(file, "r") as f:
         css_text = f.read()
 
-    pattern = r"(?<!\:\s#)(?<=\.|#)[\w-]+"
+    pattern = r"(?<!\:\s#)(?<=\})\s*[.#][a-zA-Z0-9_-]+"
     selectors = re.findall(pattern, css_text)
-
+    selectors = [selector.lstrip('\t\n\r .#') for selector in selectors]
     return {"classes": [s for s in selectors if s.startswith("-") or s[0].isalpha()], "ids": [s for s in selectors if s[0] == "#"]}
 
 
@@ -74,8 +91,6 @@ if len(sys.argv) != 3:
     # sys.argv.append('./assets/css')
 html_path = sys.argv[1]
 css_path = sys.argv[2]
-print(html_path)
-print(css_path)
 
 if os.path.isdir(html_path):
     html_selectors = process_html_in_directory(html_path)
@@ -86,4 +101,6 @@ elif os.path.isfile(html_path):
 else:
     print("Invalid directory or file.")
 
-print(find_missing_selectors(html_selectors, css_selectors))
+
+missing_selectors = find_missing_selectors(html_selectors, css_selectors)
+trim_css(css_path, missing_selectors)
