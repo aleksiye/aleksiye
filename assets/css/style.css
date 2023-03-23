@@ -956,3 +956,9 @@ article.center-grid {
     padding-right: 0;
   }
 }
+.container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: auto;
+    gap: 1.5rem;
+}
